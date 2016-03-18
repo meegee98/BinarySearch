@@ -42,7 +42,6 @@ public int binarySearch(int catNumToFind)
             high=guess-1;
         else 
             low=guess+1;
-        }
     }   
     return -1;    
 }
