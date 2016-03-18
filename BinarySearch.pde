@@ -24,7 +24,7 @@ public int linearSearch(int catNumToFind)
 {
     for(int i=0; i<store.length; i++)
     {
-        if(store[i].getCatNum()   ==catNumToFind)
+        if(store[i].getCatNum()==catNumToFind)
             return store[i].getInventory();
     }
     return -1;
@@ -47,8 +47,15 @@ public int binarySearch(int catNumToFind)
 }
 public int binarySearch(int catNumToFind,int nLow, int nHigh)
 {
-    //complete this method    
-    return -1;           
+   if(nLow>nHigh)
+        return -1;
+   int guess=(nLow+nHigh)/2;
+   if(score[guess].getCatNum==catNumToFind)
+        return score[guess].getInventory();
+   else if (score[guess].getCatNum>catNumToFind)
+        return binarySearch(catNumToFind, nLow, guess-1);
+   else
+        return binarySearch(catNumToFind, guess-1, high);
 }
 public void setup()
 {
